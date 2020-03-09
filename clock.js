@@ -6,7 +6,7 @@ function getTime() {
   let minutes = time.getMinutes();
   let hours = time.getHours();
   let seconds = time.getSeconds();
-  clockTitle.innerText = `${hours}:${minutes}:${
+  clockTitle.innerText = `${hours}:${minutes < 10 ? `0${minutes}` : minutes}:${
     seconds < 10 ? `0${seconds}` : seconds
   }`;
 }
