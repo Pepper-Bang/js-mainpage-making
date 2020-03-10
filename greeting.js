@@ -1,4 +1,4 @@
-const form = document.querySelector(".js-form"),
+const form = document.querySelector(".js-form_greeting"),
   input = form.querySelector("input"),
   greeting = document.querySelector(".js-greeting");
 
@@ -9,7 +9,7 @@ function saveName(text) {
 }
 
 function handleSubmit(event) {
-  // event.preventDefault();
+  event.preventDefault();
   const currentValue = input.value;
   saveName(currentValue);
   showGreeting(currentValue);
