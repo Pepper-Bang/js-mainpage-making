@@ -1,27 +1,33 @@
-const toDo_form = document.querySelector(".js-form_toDoList"),
-  toDo_input = toDo_form.querySelector("input"),
-  toDo_list = document.querySelector("js-toDoList");
+const toDoForm = document.querySelector(".js-form_toDoList"),
+  toDoInput = toDoForm.querySelector("input"),
+  toDoList = document.querySelector("js-toDoList");
 
-const toDos_LS = "toDoList-LS";
+const TODO_LS = "toDos";
 
-function showToDo(text) {
-  console.log(text);
+function enterToDo(text){
+    const li=document.createElement("li");
+    const li_removeBtn=document.createElement()
 }
+
+function handleSubmit_toDo(event) {
+  event.preventDefault();
+  const currentValue_toDo = toDoInput.value;
+  enterToDo(currentValue_toDo);
+  toDoInput.value = null;
+}
+
+
 
 function loadToDos() {
-  const toDos = localStorage.getItem(toDos_LS);
+  const toDos = localStorage.getItem(TODO_LS);
   if (toDos !== null) {
+    callToDos(toDos);
   }
-}
-
-function handleSubmit(event) {    
-  event.preventDefault();
-  const currentValue = toDo_input.value;
 }
 
 function init() {
   loadToDos();
-  toDo_form.addEventListener("submit", handleSubmit);
+  toDoForm.addEventListener("submit", handleSubmit_toDo);
 }
 
 init();
