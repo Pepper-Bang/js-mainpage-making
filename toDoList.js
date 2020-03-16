@@ -14,12 +14,12 @@ function delToDo(event) {
   let targetLi = event.target.parentNode;
 
   ToDoList.removeChild(targetLi);
-  let resetToDosArray=toDosArray.filter(function(toDo){
-    // console.log(toDo.id, targetLi.id);
+  let resetToDosArray=toDosArray.filter(function(toDo){    
     return toDo.id !=targetLi.id;
   })
   toDosArray =resetToDosArray;
   saveToDos();
+  }
 
 
 function enterToDo(text) {
